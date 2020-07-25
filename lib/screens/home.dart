@@ -15,10 +15,10 @@ import 'package:megahacktecban/services/notification_service.dart';
 import 'package:megahacktecban/util/globais.dart';
 import 'package:provider/provider.dart';
 
-const IconData kIconePrimeiraOpcao = Icons.child_friendly;
-const IconData kIconeSegundaOpcao = Icons.public;
-const String kTextPrimeiraOpcao = 'Tela um';
-const String kTextSegundaOpcao = 'Tela dois';
+const IconData kIconePrimeiraOpcao = Icons.account_box;
+const IconData kIconeSegundaOpcao = Icons.account_balance_wallet;
+const String kTextPrimeiraOpcao = 'Despesas';
+const String kTextSegundaOpcao = 'Conta';
 const int kIndicePaginaInicial = 0;
 
 class Home extends StatefulWidget {
