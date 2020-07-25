@@ -1,0 +1,29 @@
+name: megahacktecban
+description: A new Flutter application.
+
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.7.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^0.1.3
+  cloud_firestore: ^0.13.7
+  firebase_messaging: ^6.0.16
+  firebase_auth: ^0.16.1
+  version: ^1.2.0
+  mask_text_input_formatter: ^1.0.7
+  provider: ^4.1.3
+  modal_progress_hud: ^0.1.3
+  shared_preferences: ^0.5.7+3
+  flutter_local_notifications: ^1.4.4+1
+
+dev_dependencies:
+#  flutter_test:
+#    sdk: flutter
+flutter:
+  uses-material-design: true

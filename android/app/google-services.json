@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "318721654290",
+    "firebase_url": "https://megahacktecban.firebaseio.com",
+    "project_id": "megahacktecban",
+    "storage_bucket": "megahacktecban.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:318721654290:android:d2197339ed8601ef3462cb",
+        "android_client_info": {
+          "package_name": "br.com.megahacktecban"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "318721654290-vlsjrb5tg1ra2i1n1668fu7nrmavnf74.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAA9OTjwVYhFMZiYERMi38FIrZRl7nR2Is"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "318721654290-vlsjrb5tg1ra2i1n1668fu7nrmavnf74.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "318721654290-l3assbals1l9mu6qoh627olu6rlcfrb0.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "br.com.megahacktecban"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
