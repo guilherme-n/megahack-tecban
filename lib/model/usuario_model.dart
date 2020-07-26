@@ -4,7 +4,8 @@ class UsuarioModel {
   String id;
   String nome;
   String email;
-  String documento;
+  String cpf;
+  String rg;
   String celular;
   String senha;
   String senhaConfirmacao;
@@ -14,7 +15,7 @@ class UsuarioModel {
     this.id,
     this.nome,
     this.email,
-    this.documento,
+    this.cpf,
     this.celular,
     this.senha,
     this.senhaConfirmacao,
@@ -27,7 +28,7 @@ class UsuarioModel {
       id: doc.documentID,
       nome: data['nome'],
       email: data['email'],
-      documento: data['documento'],
+      cpf: data['cpf'],
       celular: data['celular'],
       notificationToken: data['notificationToken'] ?? '',
     );
@@ -38,25 +39,15 @@ class UsuarioModel {
       nome: usuario['nome'],
       celular: usuario['celular'],
       email: usuario['email'],
-      documento: usuario['documento'],
+      cpf: usuario['cpf'],
     );
-  }
-
-  /// Nos pedidos, so é necessario enviar nome, email, celular e documento
-  Map<String, dynamic> toJsonPedido() {
-    return {
-      'nome': nome,
-      'email': email,
-      'celular': celular,
-      'documento': documento,
-    };
   }
 
   Map<String, dynamic> toJson() {
     return {
       'nome': nome,
       'email': email,
-      'documento': documento,
+      'cpf': cpf,
       'celular': celular,
       'notificationToken': notificationToken,
     };

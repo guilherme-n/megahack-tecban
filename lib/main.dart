@@ -1,15 +1,26 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:megahacktecban/screens/cadastro/cadastro_passo1.dart';
+import 'package:megahacktecban/screens/cadastro/cadastro_passo2.dart';
+import 'package:megahacktecban/screens/cadastro/cadastro_passo3.dart';
+import 'package:megahacktecban/screens/cadastro/cadastro_passo4.dart';
+import 'package:megahacktecban/screens/cadastro/cadastro_passo5.dart';
 import 'package:megahacktecban/screens/cadastro_usuario.dart';
 import 'package:megahacktecban/screens/home.dart';
 import 'package:megahacktecban/screens/login.dart';
 import 'package:megahacktecban/screens/redefinicao_senha.dart';
+import 'package:megahacktecban/util/constantes.dart';
 import 'package:megahacktecban/util/globais.dart';
 import 'package:provider/provider.dart';
 
 void main() {
-  runApp(MegahackTecban());
+  WidgetsFlutterBinding.ensureInitialized();
+  SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp])
+      .then((_) {
+    runApp(MegahackTecban());
+  });
 }
 
 class MegahackTecban extends StatelessWidget {
@@ -27,7 +38,7 @@ class MegahackTecban extends StatelessWidget {
         child: MaterialApp(
           title: 'Flutter Demo',
           theme: ThemeData(
-            primarySwatch: Colors.purple,
+            primaryColor: kColorAzulMedio,
             visualDensity: VisualDensity.adaptivePlatformDensity,
           ),
           initialRoute: Home.id,
@@ -37,6 +48,11 @@ class MegahackTecban extends StatelessWidget {
             CadastroUsuario.id: (_) => CadastroUsuario(),
             Home.id: (_) => Home(),
             RedefinicaoSenha.id: (_) => RedefinicaoSenha(),
+            CadastroPasso1.id: (_) => CadastroPasso1(),
+            CadastroPasso2.id: (_) => CadastroPasso2(),
+            CadastroPasso3.id: (_) => CadastroPasso3(),
+            CadastroPasso4.id: (_) => CadastroPasso4(),
+            CadastroPasso5.id: (_) => CadastroPasso5(),
           },
           debugShowCheckedModeBanner: false,
         ),

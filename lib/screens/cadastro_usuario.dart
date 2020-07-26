@@ -125,7 +125,7 @@ class _CadastroUsuarioState extends State<CadastroUsuario> {
                     return null;
                   },
                   onSaved: (_) {
-                    _usuario.documento = _mascaraCpfCnpj.getUnmaskedText();
+                    _usuario.cpf = _mascaraCpfCnpj.getUnmaskedText();
                   },
                 ),
                 SizedBox(height: 10),

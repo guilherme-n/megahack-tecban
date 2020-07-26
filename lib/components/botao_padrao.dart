@@ -18,6 +18,7 @@ class BotaoPadrao extends StatelessWidget {
   final EdgeInsetsGeometry margin;
   final EdgeInsetsGeometry padding;
   final bool isBotaoSemCor;
+  final Color corBotao;
 
   const BotaoPadrao({
     Key key,
@@ -26,6 +27,7 @@ class BotaoPadrao extends StatelessWidget {
     this.margin,
     this.padding,
     this.isBotaoSemCor = false,
+    this.corBotao = kPrimaryColor,
   }) : super(key: key);
 
   @override
@@ -37,7 +39,7 @@ class BotaoPadrao extends StatelessWidget {
         child: CupertinoButton(
           pressedOpacity: 1,
           borderRadius: BorderRadius.circular(10),
-          color: isBotaoSemCor ? null : CupertinoTheme.of(context).primaryColor,
+          color: isBotaoSemCor ? null : corBotao,
           child: textoBotao,
           onPressed: onPressed,
         ),
@@ -52,7 +54,7 @@ class BotaoPadrao extends StatelessWidget {
       } else {
         novoTexto = Text(
           textoBotao.data,
-          style: textoBotao.style.copyWith(color: kPrimaryColor),
+          style: textoBotao.style.copyWith(color: corBotao),
         );
       }
       return Container(
@@ -64,7 +66,7 @@ class BotaoPadrao extends StatelessWidget {
           ),
           elevation: 3,
           height: 50,
-          color: isBotaoSemCor ? null : kPrimaryColor,
+          color: isBotaoSemCor ? null : corBotao,
           child: novoTexto,
           onPressed: onPressed,
         ),

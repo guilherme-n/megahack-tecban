@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:megahacktecban/components/alert_dialog.dart';
 import 'package:megahacktecban/dao/usuario_dao.dart';
 import 'package:megahacktecban/exceptions/document_not_found_exception.dart';
-import 'package:megahacktecban/screens/login.dart';
+import 'package:megahacktecban/screens/home_nao_autenticado.dart';
 import 'package:megahacktecban/screens/tela_dois.dart';
 import 'package:megahacktecban/screens/tela_um.dart';
 import 'package:megahacktecban/services/auth_service.dart';
@@ -104,7 +104,7 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return _isUsuarioLogado
         ? buildTelaInicialUsuarioAutorizado()
-        : Login(MediaQuery.of(context).platformBrightness);
+        : HomeNaoAutenticado();
   }
 
   Scaffold buildTelaInicialUsuarioAutorizado() {

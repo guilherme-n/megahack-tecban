@@ -36,26 +36,11 @@ class _LoginState extends State<Login>
 
   String _email;
   String _senha;
-  Animation _animation;
-  AnimationController _animationController;
   FocusNode _focusSenha;
   SharedPreferences _prefs;
 
   var _isCarregando = false;
   var _isPasswordObscure = true;
-
-  @override
-  void didChangePlatformBrightness() {
-    // NAO FUNCIONA =/
-    print(WidgetsBinding.instance.window
-        .platformBrightness); // should print Brightness.light / Brightness.dark when you switch
-    _animationController.forward();
-    _animationController.addListener(() {
-      setState(() {});
-    });
-
-    super.didChangePlatformBrightness();
-  }
 
   @override
   void initState() {
@@ -66,27 +51,11 @@ class _LoginState extends State<Login>
       _prefs = value;
       _controllerEmail.text = _prefs.getString(kPrefKeyEmailUltimoLogin) ?? '';
     });
-
-    _animationController = AnimationController(
-      vsync: this,
-      duration: Duration(seconds: 1),
-    );
-
-    _animation = ColorTween(
-      begin: kPrimaryColor,
-      end: widget.brightness == Brightness.dark ? Colors.black12 : Colors.white,
-    ).animate(_animationController);
-
-    _animationController.forward();
-    _animationController.addListener(() {
-      setState(() {});
-    });
   }
 
   @override
   void dispose() {
     _focusSenha.dispose();
-    _animationController.dispose();
     super.dispose();
   }
 
@@ -97,22 +66,12 @@ class _LoginState extends State<Login>
       inAsyncCall: _isCarregando,
       child: Scaffold(
         appBar: header(
-          textoPrincipal: 'MegahackTecban',
+          textoPrincipal: 'Best4u',
           context: context,
         ),
         key: _keyScaffold,
         body: Container(
           height: MediaQuery.of(context).size.height,
-          decoration: BoxDecoration(
-              gradient: LinearGradient(
-                  begin: Alignment.center,
-                  end: Alignment.bottomCenter,
-                  colors: [
-                widget.brightness == Brightness.dark
-                    ? Colors.black12
-                    : Colors.white,
-                _animation.value,
-              ])),
           child: Form(
             key: _globalKeyForm,
             child: Column(
@@ -209,30 +168,6 @@ class _LoginState extends State<Login>
                         ),
                       ],
                     ),
-                  ),
-                ),
-                Container(
-                  margin: EdgeInsets.only(bottom: 10),
-                  height: 60.0,
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: <Widget>[
-                      Text('Não tem conta?'),
-                      BotaoPadrao(
-                        textoBotao: Text(
-                          'Crie agora',
-                          style: TextStyle(fontWeight: FontWeight.bold),
-                        ),
-                        isBotaoSemCor: true,
-                        onPressed: () {
-                          _limparAcoesTela();
-                          Navigator.pushNamed(
-                            context,
-                            CadastroUsuario.id,
-                          );
-                        },
-                      ),
-                    ],
                   ),
                 ),
               ],
