@@ -8,7 +8,6 @@ import 'package:megahacktecban/components/header.dart';
 import 'package:megahacktecban/components/progress.dart';
 import 'package:megahacktecban/components/single_child_scrollview_padrao.dart';
 import 'package:megahacktecban/components/text_form_field_padrao.dart';
-import 'package:megahacktecban/screens/cadastro_usuario.dart';
 import 'package:megahacktecban/screens/redefinicao_senha.dart';
 import 'package:megahacktecban/services/notification_service.dart';
 import 'package:megahacktecban/util/constantes.dart';
@@ -203,6 +202,8 @@ class _LoginState extends State<Login>
       );
 
       NotificationService.configureNotification(context);
+
+      Navigator.of(context).pop();
     } catch (error) {
       switch (error.code) {
         case 'ERROR_INVALID_EMAIL':

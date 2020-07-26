@@ -2,6 +2,11 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:megahacktecban/screens/cadastro/cadastro_conta_passo1.dart';
+import 'package:megahacktecban/screens/cadastro/cadastro_conta_passo2.dart';
+import 'package:megahacktecban/screens/cadastro/cadastro_conta_passo3.dart';
+import 'package:megahacktecban/screens/cadastro/cadastro_conta_passo4.dart';
+import 'package:megahacktecban/screens/cadastro/cadastro_conta_passo5.dart';
 import 'package:megahacktecban/screens/cadastro/cadastro_passo1.dart';
 import 'package:megahacktecban/screens/cadastro/cadastro_passo2.dart';
 import 'package:megahacktecban/screens/cadastro/cadastro_passo3.dart';
@@ -36,7 +41,6 @@ class MegahackTecban extends StatelessWidget {
       child: ChangeNotifierProvider<Globais>(
         create: (context) => Globais(),
         child: MaterialApp(
-          title: 'Flutter Demo',
           theme: ThemeData(
             primaryColor: kColorAzulMedio,
             visualDensity: VisualDensity.adaptivePlatformDensity,
@@ -53,6 +57,11 @@ class MegahackTecban extends StatelessWidget {
             CadastroPasso3.id: (_) => CadastroPasso3(),
             CadastroPasso4.id: (_) => CadastroPasso4(),
             CadastroPasso5.id: (_) => CadastroPasso5(),
+            CadastroContaPasso1.id: (_) => CadastroContaPasso1(),
+            CadastroContaPasso2.id: (_) => CadastroContaPasso2(),
+            CadastroContaPasso3.id: (_) => CadastroContaPasso3(),
+            CadastroContaPasso4.id: (_) => CadastroContaPasso4(),
+            CadastroContaPasso5.id: (_) => CadastroContaPasso5(),
           },
           debugShowCheckedModeBanner: false,
         ),

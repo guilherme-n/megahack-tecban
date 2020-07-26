@@ -27,7 +27,11 @@ class CadastroPasso1 extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                IndicadorProgressoCadastro(passoAtual: 1),
+                IndicadorProgressoCadastro(
+                  qtdPassos: 5,
+                  passoAtual: 1,
+                  cor: kColorVerdeEscuro,
+                ),
               ],
             ),
             SizedBox(height: 80),

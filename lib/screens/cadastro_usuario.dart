@@ -1,5 +1,3 @@
-import 'dart:io';
-
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
@@ -14,7 +12,6 @@ import 'package:megahacktecban/model/usuario_model.dart';
 import 'package:megahacktecban/util/constantes.dart';
 import 'package:megahacktecban/util/validador.dart';
 import 'package:modal_progress_hud/modal_progress_hud.dart';
-import 'package:pedantic/pedantic.dart';
 
 import '../components/single_child_scrollview_padrao.dart';
 
@@ -66,7 +63,6 @@ class _CadastroUsuarioState extends State<CadastroUsuario> {
     'Nome fantasia',
   ];
 
-  File _fotoUsuario;
   bool _isCarregando = false;
 
   @override
@@ -210,28 +206,6 @@ class _CadastroUsuarioState extends State<CadastroUsuario> {
                   onFieldSubmitted: (_) =>
                       _focusSenhaConfirmacao.requestFocus(),
                 ),
-                SizedBox(height: 10),
-                TextFormFieldPadrao(
-                  focusNode: _focusSenhaConfirmacao,
-                  labelText: 'Confirmar senha',
-                  keyboardType: TextInputType.visiblePassword,
-                  obscureText: true,
-                  textInputAction: TextInputAction.send,
-                  validator: (value) {
-                    if (value.isEmpty) {
-                      return 'Preencha a confirmação de senha';
-                    } else if (value != _controllerSenha.text) {
-                      return 'As senhas inseridas não coincidem';
-                    }
-                    return null;
-                  },
-                  onSaved: (value) {
-                    _usuario.senhaConfirmacao = value;
-                  },
-                  onFieldSubmitted: (_) {
-                    _submit();
-                  },
-                ),
               ],
             ),
           ),
@@ -268,7 +242,7 @@ class _CadastroUsuarioState extends State<CadastroUsuario> {
 
       if (resultado.user != null) {
         _usuario.id = resultado.user.uid;
-        await _usuarioDao.createUpdate(_usuario, _fotoUsuario);
+        await _usuarioDao.createUpdate(_usuario);
 
         await alertDialog(
           context: context,
@@ -277,7 +251,6 @@ class _CadastroUsuarioState extends State<CadastroUsuario> {
               'Comece já a usar o App!',
           primeiroTexto: 'OK',
           primeiroTextoCallback: () {
-            unawaited(_auth.signOut());
             Navigator.of(context).popUntil((route) => route.isFirst);
           },
         );

@@ -1,5 +1,3 @@
-import 'dart:io';
-
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:megahacktecban/exceptions/document_not_found_exception.dart';
 import 'package:megahacktecban/model/usuario_model.dart';
@@ -18,7 +16,7 @@ class UsuarioDao {
     return UsuarioModel.fromFirestore(snapshot);
   }
 
-  Future<void> createUpdate(UsuarioModel usuario, File fotoUsuario) async {
+  Future<void> createUpdate(UsuarioModel usuario) async {
     if (usuario.id == null) throw Exception('Id não fornecido');
 
     await _refUsuarios

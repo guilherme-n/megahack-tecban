@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
 import 'package:megahacktecban/components/indicador_progresso_cadastro.dart';
 import 'package:megahacktecban/model/usuario_model.dart';
-import 'package:megahacktecban/screens/cadastro/cadastro_passo3.dart';
 import 'package:megahacktecban/screens/cadastro/cadastro_passo5.dart';
 import 'package:megahacktecban/util/constantes.dart';
 import 'package:megahacktecban/util/validador.dart';
@@ -37,7 +36,11 @@ class _CadastroPasso4State extends State<CadastroPasso4> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                IndicadorProgressoCadastro(passoAtual: 4),
+                IndicadorProgressoCadastro(
+                  qtdPassos: 5,
+                  passoAtual: 4,
+                  cor: kColorVerdeEscuro,
+                ),
               ],
             ),
             SizedBox(height: 80),
@@ -115,7 +118,7 @@ class _CadastroPasso4State extends State<CadastroPasso4> {
       return;
     }
 
-    if(!Validador.cpf(_mascaraCpf.getUnmaskedText())){
+    if (!Validador.cpf(_mascaraCpf.getUnmaskedText())) {
       _keyScaffold.currentState.showSnackBar(
         SnackBar(
           content: Text('CPF inválido'),

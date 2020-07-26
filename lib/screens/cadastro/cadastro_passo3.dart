@@ -35,7 +35,11 @@ class _CadastroPasso3State extends State<CadastroPasso3> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                IndicadorProgressoCadastro(passoAtual: 3),
+                IndicadorProgressoCadastro(
+                  qtdPassos: 5,
+                  passoAtual: 3,
+                  cor: kColorVerdeEscuro,
+                ),
               ],
             ),
             SizedBox(height: 80),

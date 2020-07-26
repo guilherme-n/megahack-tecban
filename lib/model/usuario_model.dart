@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:megahacktecban/model/banco_model.dart';
 
 class UsuarioModel {
   String id;
@@ -8,18 +9,19 @@ class UsuarioModel {
   String rg;
   String celular;
   String senha;
-  String senhaConfirmacao;
   String notificationToken;
+  BancoModel bancoSelecionado;
 
   UsuarioModel({
     this.id,
     this.nome,
     this.email,
     this.cpf,
+    this.rg,
     this.celular,
     this.senha,
-    this.senhaConfirmacao,
     this.notificationToken,
+    this.bancoSelecionado
   });
 
   factory UsuarioModel.fromFirestore(DocumentSnapshot doc) {
@@ -30,16 +32,9 @@ class UsuarioModel {
       email: data['email'],
       cpf: data['cpf'],
       celular: data['celular'],
+      rg: data['rg'],
       notificationToken: data['notificationToken'] ?? '',
-    );
-  }
-
-  factory UsuarioModel.fromMap(Map<String, dynamic> usuario) {
-    return UsuarioModel(
-      nome: usuario['nome'],
-      celular: usuario['celular'],
-      email: usuario['email'],
-      cpf: usuario['cpf'],
+//      bancoSelecionado: data['bancoSelecionado'],
     );
   }
 
@@ -48,8 +43,10 @@ class UsuarioModel {
       'nome': nome,
       'email': email,
       'cpf': cpf,
+      'rg': rg,
       'celular': celular,
       'notificationToken': notificationToken,
+      'bancoSelecionado': bancoSelecionado.toJson(),
     };
   }
 }

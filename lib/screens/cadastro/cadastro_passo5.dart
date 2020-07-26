@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:megahacktecban/components/indicador_progresso_cadastro.dart';
 import 'package:megahacktecban/model/usuario_model.dart';
+import 'package:megahacktecban/screens/cadastro/cadastro_conta_passo1.dart';
 import 'package:megahacktecban/util/constantes.dart';
 
 class CadastroPasso5 extends StatefulWidget {
@@ -33,7 +34,11 @@ class _CadastroPasso5State extends State<CadastroPasso5> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                IndicadorProgressoCadastro(passoAtual: 5),
+                IndicadorProgressoCadastro(
+                  qtdPassos: 5,
+                  passoAtual: 5,
+                  cor: kColorVerdeEscuro,
+                ),
               ],
             ),
             SizedBox(height: 80),
@@ -111,10 +116,11 @@ class _CadastroPasso5State extends State<CadastroPasso5> {
       return;
     }
     _usuario.rg = _controllerRg.text;
-    _keyScaffold.currentState.showSnackBar(
-      SnackBar(
-        content: Text('Ainda não implementado'),
-      ),
+    Navigator.of(context).pushNamed(
+      CadastroContaPasso1.id,
+      arguments: {
+        'usuario': _usuario,
+      },
     );
   }
 }

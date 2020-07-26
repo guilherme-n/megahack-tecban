@@ -25,7 +25,7 @@ class AuthService {
       usuario.notificationToken = '';
 
       try {
-        await _usuarioDao.createUpdate(usuario, null);
+        await _usuarioDao.createUpdate(usuario);
       } catch (_) {}
     }
 
