@@ -13,7 +13,7 @@
 Este projeto foi desenvolvido com as seguintes tecnologias:
 
 <h3 align="left">
-    <img alt="flutter" title="flutter" src="./img/flutter.png">
+    <img alt="flutter" title="flutter" width="200" src="./img/flutter.png">
     <br>
 </h3>
 
