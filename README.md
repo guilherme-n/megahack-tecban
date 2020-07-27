@@ -13,14 +13,9 @@ Mas afinal, para que serve um App para estipular metas financeiras sem educaçã
 
 Este projeto foi desenvolvido com as seguintes tecnologias:
 ![Flutter](/img/flutter.png)
-![Dart](/img/dart.png)
+![Dart](/img/dart-language.png)
 ![Firebase](/img/firebase.png)
 
-## Algumas Telas da Best4U
-
-<h3 align="center">
-    <img alt="" title="logo" width="" src="#">
-</h3>
 
 ## :mortar_board:  Quem participou?
 
