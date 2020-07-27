@@ -11,9 +11,21 @@ Mas afinal, para que serve um App para estipular metas financeiras sem educaçã
 
 ## 🚀 Tecnologias usadas
 Este projeto foi desenvolvido com as seguintes tecnologias:
-![Flutter](/img/flutter.png)
-![Dart](/img/dart-language.png)
-![Firebase](/img/firebase.png)
+
+<h3 align="left">
+    <img alt="flutter" title="flutter" src="./img/flutter.png">
+    <br>
+</h3>
+
+<h3 align="left">
+    <img alt="dart" title="dart" src="./img/dart-language.png">
+    <br>
+</h3>
+
+<h3 align="left">
+    <img alt="Firebase" title="Firebase" src="./img/firebase.png">
+    <br>
+</h3>
 
 
 ## :mortar_board:  Quem participou?
