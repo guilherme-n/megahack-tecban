@@ -7,18 +7,25 @@ import 'package:flutter/material.dart';
 import 'package:megahacktecban/components/alert_dialog.dart';
 import 'package:megahacktecban/dao/usuario_dao.dart';
 import 'package:megahacktecban/exceptions/document_not_found_exception.dart';
+import 'package:megahacktecban/screens/financeiro.dart';
+import 'package:megahacktecban/screens/guias_e_cursos.dart';
 import 'package:megahacktecban/screens/home_nao_autenticado.dart';
-import 'package:megahacktecban/screens/tela_dois.dart';
-import 'package:megahacktecban/screens/tela_um.dart';
+import 'package:megahacktecban/screens/perfil.dart';
+import 'package:megahacktecban/screens/pontos.dart';
 import 'package:megahacktecban/services/auth_service.dart';
 import 'package:megahacktecban/services/notification_service.dart';
+import 'package:megahacktecban/util/constantes.dart';
 import 'package:megahacktecban/util/globais.dart';
 import 'package:provider/provider.dart';
 
-const IconData kIconePrimeiraOpcao = Icons.account_box;
-const IconData kIconeSegundaOpcao = Icons.account_balance_wallet;
-const String kTextPrimeiraOpcao = 'Despesas';
-const String kTextSegundaOpcao = 'Conta';
+const IconData kIconePrimeiraOpcao = Icons.person_outline;
+const IconData kIconeSegundaOpcao = Icons.attach_money;
+const IconData kIconeTerceiraOpcao = Icons.school;
+const IconData kIconeQuartaOpcao = Icons.redeem;
+const String kTextPrimeiraOpcao = 'Perfil';
+const String kTextSegundaOpcao = 'Financeiro';
+const String kTextTerceiraOpcao = 'Guias e Cursos';
+const String kTextQuartaOpcao = 'Pontos';
 const int kIndicePaginaInicial = 0;
 
 class Home extends StatefulWidget {
@@ -38,8 +45,10 @@ class _HomeState extends State<Home> {
   StreamSubscription subscription;
 
   static final List<Widget> _telasNavegacao = <Widget>[
-    TelaUm(),
-    TelaDois(),
+    Perfil(),
+    Financeiro(),
+    GuiasECursos(),
+    Pontos(),
   ];
 
   static final List<BottomNavigationBarItem> _itensNavegacao = [
@@ -50,6 +59,14 @@ class _HomeState extends State<Home> {
     BottomNavigationBarItem(
       icon: Icon(kIconeSegundaOpcao),
       title: Text(kTextSegundaOpcao),
+    ),
+    BottomNavigationBarItem(
+      icon: Icon(kIconeTerceiraOpcao),
+      title: Text(kTextTerceiraOpcao),
+    ),
+    BottomNavigationBarItem(
+      icon: Icon(kIconeQuartaOpcao),
+      title: Text(kTextQuartaOpcao),
     ),
   ];
 
@@ -141,6 +158,7 @@ class _HomeState extends State<Home> {
       currentIndex: _pageIndex,
       onTap: _onTap,
       items: _itensNavegacao,
+      activeColor: kColorAzulEscuro,
     );
   }
 

@@ -64,17 +64,23 @@ class _LoginState extends State<Login>
       progressIndicator: circularProgress(context),
       inAsyncCall: _isCarregando,
       child: Scaffold(
-        appBar: header(
-          textoPrincipal: 'Best4u',
-          context: context,
-        ),
         key: _keyScaffold,
         body: Container(
+          padding: EdgeInsets.symmetric(horizontal: 20.0),
           height: MediaQuery.of(context).size.height,
           child: Form(
             key: _globalKeyForm,
             child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
+                SizedBox(height: 50),
+                Text(
+                  'Login',
+                  style: TextStyle(
+                    fontSize: 40,
+                    color: kColorAzulEscuro,
+                  ),
+                ),
                 SizedBox(height: 20),
                 Expanded(
                   flex: 3,
@@ -86,7 +92,6 @@ class _LoginState extends State<Login>
                       children: <Widget>[
                         TextFormFieldPadrao(
                           labelText: 'Email',
-                          prefixIcon: Icon(Icons.email),
                           controller: _controllerEmail,
                           keyboardType: TextInputType.emailAddress,
                           textInputAction: TextInputAction.next,
@@ -105,7 +110,6 @@ class _LoginState extends State<Login>
                         TextFormFieldPadrao(
                           labelText: 'Senha',
                           controller: _controllerSenha,
-                          prefixIcon: Icon(Icons.vpn_key),
                           sufixIcon: IconButton(
                             icon: _isPasswordObscure
                                 ? Icon(Icons.visibility_off)
@@ -142,8 +146,9 @@ class _LoginState extends State<Login>
                                 textoBotao: Text(
                                   'Esqueceu a senha?',
                                   style: TextStyle(
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 12),
+                                      fontWeight: FontWeight.w800,
+                                      fontSize: 12,
+                                      color: kColorAzulEscuro),
                                 ),
                                 onPressed: () {
                                   _limparAcoesTela();

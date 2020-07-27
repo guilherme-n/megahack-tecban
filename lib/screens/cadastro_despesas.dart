@@ -5,7 +5,7 @@ import 'package:megahacktecban/components/single_child_scrollview_padrao.dart';
 import 'package:megahacktecban/components/text_form_field_padrao.dart';
 import 'package:megahacktecban/services/auth_service.dart';
 
-class TelaUm extends StatelessWidget {
+class CadastroDespesas extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

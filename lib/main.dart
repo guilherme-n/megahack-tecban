@@ -12,7 +12,6 @@ import 'package:megahacktecban/screens/cadastro/cadastro_passo2.dart';
 import 'package:megahacktecban/screens/cadastro/cadastro_passo3.dart';
 import 'package:megahacktecban/screens/cadastro/cadastro_passo4.dart';
 import 'package:megahacktecban/screens/cadastro/cadastro_passo5.dart';
-import 'package:megahacktecban/screens/cadastro_usuario.dart';
 import 'package:megahacktecban/screens/home.dart';
 import 'package:megahacktecban/screens/login.dart';
 import 'package:megahacktecban/screens/redefinicao_senha.dart';
@@ -49,7 +48,6 @@ class MegahackTecban extends StatelessWidget {
           routes: {
             Login.id: (context) =>
                 Login(MediaQuery.of(context).platformBrightness),
-            CadastroUsuario.id: (_) => CadastroUsuario(),
             Home.id: (_) => Home(),
             RedefinicaoSenha.id: (_) => RedefinicaoSenha(),
             CadastroPasso1.id: (_) => CadastroPasso1(),
