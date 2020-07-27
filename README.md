@@ -1,7 +1,7 @@
 <h3 align="center">
-    <img alt="Logo" title="logo" width="300px" src="./img/logo.png">
+    <img alt="Logo" title="logo" width="300px" src="./img/icon.png">
     <br><br>
-    <b>Hackaton TECBAN  -> "Best4U – Equilibre o seu futuro"</b> 
+    <b>"Best4U – Equilibre o seu futuro"</b> 
 </h3>
 
 # Best4U
