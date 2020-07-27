@@ -18,12 +18,12 @@ Este projeto foi desenvolvido com as seguintes tecnologias:
 </h3>
 
 <h3 align="left">
-    <img alt="dart" title="dart" width="200" src="./img/dart-language.png">
+    <img alt="dart" title="dart" width="150" src="./img/dart-language.png">
     <br>
 </h3>
 
 <h3 align="left">
-    <img alt="Firebase" title="Firebase" width="200" src="./img/firebase.png">
+    <img alt="Firebase" title="Firebase" width="150" src="./img/firebase.png">
     <br>
 </h3>
 
